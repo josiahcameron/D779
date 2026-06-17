@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Easy Bank</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="app-shell">
+			<header class="topbar">
+				<div class="brand-group">
+					<div class="brand-mark">EB</div>
+					<div>
+						<p class="eyebrow">Easy Bank Prototype</p>
+						<h1>Easy Bank</h1>
+					</div>
+				</div>
+
+				<div class="topbar-actions">
+					<button
+						id="accountMenuToggle"
+						class="account-toggle"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Welcome, Alex ▾
+					</button>
+					<div id="accountDropdown" class="account-dropdown" role="menu">
+						<a href="#" data-action="settings">Account Settings</a>
+						<a href="#" data-action="help">Help Center</a>
+						<a href="#" data-action="auth" id="authAction">Log Out</a>
+					</div>
+				</div>
+			</header>
+
+			<nav class="navbar" aria-label="Primary navigation">
+				<button class="nav-link" data-page="accounts">Account</button>
+				<button class="nav-link" data-page="bill-pay">Bill Pay</button>
+				<button class="nav-link" data-page="move-money">Move Money</button>
+				<button class="nav-link" data-page="statements">Statement</button>
+			</nav>
+
+			<section class="hero-panel">
+				<div>
+					<h2 class="page-title">Account</h2>
+					<p>
+						Use this interactive prototype to explore the core banking workflow
+						for accounts, bill payments, transfers, and statements.
+					</p>
+				</div>
+				<div class="hero-summary">
+					<strong>Current balance</strong>
+					<span>$18,540.75</span>
+				</div>
+			</section>
+
+			<main class="page-content">
+				<article id="accounts" class="page-panel">
+					<div class="panel-grid">
+						<section class="panel-card">
+							<h3>Checking Account</h3>
+							<p class="balance">$8,120.56</p>
+							<p>Available balance, rewards checking, direct deposit.</p>
+							<button class="primary-btn">View details</button>
+						</section>
+						<section class="panel-card accent">
+							<h3>Savings Account</h3>
+							<p class="balance">$10,420.19</p>
+							<p>High-yield savings, emergency fund, goal tracking.</p>
+							<button class="secondary-btn">Save more</button>
+						</section>
+					</div>
+					<section class="info-block">
+						<h4>Recent activity</h4>
+						<ul>
+							<li>+ $1,200 Salary deposit</li>
+							<li>- $82.37 Grocery store</li>
+							<li>- $59.99 Utility bill</li>
+						</ul>
+					</section>
+				</article>
+
+				<article id="bill-pay" class="page-panel">
+					<div class="panel-card wide">
+						<h3>Bill Pay summary</h3>
+						<p>
+							Schedule payments, manage payees, and keep your due dates
+							organized.
+						</p>
+						<dl>
+							<div>
+								<dt>Next due</dt>
+								<dd>Jun 20 — $325.00</dd>
+							</div>
+							<div>
+								<dt>Payees</dt>
+								<dd>7 active accounts</dd>
+							</div>
+						</dl>
+						<button class="primary-btn">Schedule payment</button>
+					</div>
+					<section class="info-block">
+						<h4>Recent bill activity</h4>
+						<ul>
+							<li>Electricity — Paid Jun 10</li>
+							<li>Rent — Scheduled Jun 25</li>
+							<li>Internet — Due Jun 18</li>
+						</ul>
+					</section>
+				</article>
+
+				<article id="move-money" class="page-panel">
+					<div class="panel-card wide">
+						<h3>Transfer funds</h3>
+						<p>
+							Move money between accounts instantly or set up external
+							transfers.
+						</p>
+						<div class="transfer-grid">
+							<label
+								>From account<select>
+									<option>Checking</option>
+									<option>Savings</option>
+								</select></label
+							>
+							<label
+								>To account<select>
+									<option>Savings</option>
+									<option>External Account</option>
+								</select></label
+							>
+							<label>Amount<input type="text" value="$250.00" /></label>
+						</div>
+						<button class="primary-btn">Initiate transfer</button>
+					</div>
+					<section class="info-block">
+						<h4>Transfer history</h4>
+						<ul>
+							<li>Jun 12 — $300 to Savings</li>
+							<li>Jun 05 — $150 to External Account</li>
+						</ul>
+					</section>
+				</article>
+
+				<article id="statements" class="page-panel">
+					<div class="panel-card wide">
+						<h3>Statements</h3>
+						<p>
+							Download statements and review account history for the past 12
+							months.
+						</p>
+						<ul class="statement-list">
+							<li>May 2026 • $4,500.28</li>
+							<li>Apr 2026 • $3,970.14</li>
+							<li>Mar 2026 • $4,102.89</li>
+						</ul>
+						<button class="secondary-btn">Download latest</button>
+					</div>
+				</article>
+			</main>
+
+			<div id="statusMessage" class="status-toast" aria-live="polite"></div>
+		</div>
+
+		<script src="./script.js"></script>
+	</body>
+</html>
