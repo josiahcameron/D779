@@ -4,6 +4,8 @@ const accountToggle = document.getElementById("accountMenuToggle");
 const accountDropdown = document.getElementById("accountDropdown");
 const authAction = document.getElementById("authAction");
 const statusMessage = document.getElementById("statusMessage");
+const botToggle = document.getElementById("chatBotButton");
+const botChat = document.getElementById("botChat");
 let loggedIn = true;
 
 function setActivePage(pageId) {
@@ -62,8 +64,18 @@ accountDropdown.addEventListener("click", (event) => {
 	}
 });
 
+botToggle.addEventListener("click", (event) => {
+	event.stopPropagation();
+	botChat.classList.toggle("open");
+});
+
+botChat.addEventListener("click", (event) => {
+	event.preventDefault();
+});
+
 document.addEventListener("click", () => {
 	accountDropdown.classList.remove("open");
+	botChat.classList.remove("open");
 });
 
 setActivePage("accounts");
